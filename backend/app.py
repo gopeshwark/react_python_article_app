@@ -2,9 +2,11 @@ from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 import datetime
 from flask_marshmallow import Marshmallow
+from flask_cors import CORS
 
 # Create the object of Flask
 app = Flask(__name__)
+CORS(app)
 
 # Sqlalchemy Database configuration with MySql
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:12345@localhost/python_articles'
